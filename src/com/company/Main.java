@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -17,17 +18,24 @@ public class Main {
             System.out.println("5. Завершить программу.");
             point = scanner.nextInt();
             switch (point) {
-                case 1: Flight flight = new Flight();
-                    System.out.println("Введите пунк назначения: ");
-
-                case 2: managment.buyTicket();
-
-                case 3: managment.showAllFlights();
-
-                case 4: managment.searchByIdOfFlight("4");
-
+                case 1:
+                    managment.addNewFlight(new Flight());
+                    break;
+                case 2:
+                    managment.buyTicket();
+                    break;
+                case 3:
+                    System.out.println("Вывожу все рейсы: ");
+                    Flight flight = new Flight();
+                    Arrays.toString(flight.getFlights());
+                    break;
+                case 4:
+                    managment.searchByIdOfFlight("4");
+                    break;
+                default:
+                    System.out.println("");
             }
-        }while (point != 0);
+        } while (point != 5);
         System.out.println("Программа завершается...");
     }
 }

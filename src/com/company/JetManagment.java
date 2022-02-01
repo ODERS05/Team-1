@@ -1,7 +1,7 @@
 package com.company;
 
 public class JetManagment implements Managment {
-    private Flight[] flights = new Flight[4];
+    private Flight[] flights = new Flight[5];
 
     @Override
     public void addNewFlight(Flight flight) {
@@ -21,7 +21,7 @@ public class JetManagment implements Managment {
     @Override
     public void showAllFlights() {
         for (Flight flight : flights) {
-            if (flight != null) {
+            if (flight == flight) {
                 System.out.println(flight);
             }
         }
