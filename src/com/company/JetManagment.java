@@ -4,7 +4,12 @@ public class JetManagment implements Managment{
     private Flight[] flights;
     @Override
     public void addNewFlight(Flight flight) {
-
+        for (int i = 0; i < flights.length; i++) {
+            if (flights[i] == null){
+                flights[i] = flight;
+                break;
+            }
+        }
     }
 
     @Override
@@ -14,11 +19,16 @@ public class JetManagment implements Managment{
 
     @Override
     public void showAllFlights() {
-
+        for ( Flight flight : flights) {
+            if (flight != null){
+                System.out.println(flight);
+            }
+        }
     }
 
     @Override
-    public Flight searchByNumOfFlight(String num) {
+    public Flight searchByIdOfFlight(String num) {
+
         return null;
     }
 }
