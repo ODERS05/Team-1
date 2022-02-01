@@ -1,8 +1,9 @@
 package com.company;
 
 public class JetManagment implements Managment{
+    private Flight[] flights;
     @Override
-    public void addNewFlight() {
+    public void addNewFlight(Flight flight) {
 
     }
 
