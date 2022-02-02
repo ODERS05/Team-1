@@ -1,4 +1,4 @@
-package JetCompany;
+package com.company.jetcompany;
 
 public class Ticket {
     private int num;

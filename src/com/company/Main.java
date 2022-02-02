@@ -1,7 +1,7 @@
 package com.company;
 
-import JetCompany.Managment.JetManagment;
-import JetCompany.Managment.Managment;
+import com.company.jetcompany.mangment.JetManagment;
+import com.company.jetcompany.mangment.Managment;
 
 import java.util.Scanner;
 

@@ -1,7 +1,6 @@
-package JetCompany.Managment;
+package com.company.jetcompany.mangment;
 
-import JetCompany.Flight;
-import JetCompany.Managment.Managment;
+import com.company.jetcompany.Flight;
 
 public class JetManagment implements Managment {
     private Flight[] flights;

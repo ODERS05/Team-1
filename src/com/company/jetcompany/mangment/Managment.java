@@ -1,6 +1,6 @@
-package JetCompany.Managment;
+package com.company.jetcompany.mangment;
 
-import JetCompany.Flight;
+import com.company.jetcompany.Flight;
 
 public interface Managment {
     void addNewFlight(Flight flight);

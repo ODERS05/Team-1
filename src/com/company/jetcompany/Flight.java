@@ -1,4 +1,6 @@
-package JetCompany;
+package com.company.jetcompany;
+
+import com.company.jetcompany.Aircraft;
 
 public class Flight {
     private int id;
