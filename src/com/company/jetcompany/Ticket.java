@@ -31,10 +31,9 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket{" +
-                "num=" + num +
-                ", place='" + place + '\'' +
-                ", cost=" + cost +
-                '}';
+        return "Информация о билетах: " +
+                "Номер билета: " + num +
+                ", Место направления: '" + place + '\'' +
+                ", Цена: " + cost + " ";
     }
 }

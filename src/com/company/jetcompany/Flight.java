@@ -5,13 +5,17 @@ import com.company.jetcompany.Aircraft;
 import java.util.Scanner;
 
 public class Flight {
+
     private int id;
     private String departureTime;
     private String arrivalTime;
     private Aircraft aircraft;
     private String status;
+    private static int count = 0;
 
     public Flight(Scanner departureTime, Scanner arrivalTime, Scanner status) {
+        count++;
+        this.id = this.id + count;
         this.departureTime = String.valueOf(departureTime);
         this.arrivalTime = String.valueOf(arrivalTime);
         this.status = String.valueOf(status);
@@ -60,6 +64,15 @@ public class Flight {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        Flight.count = count;
+    }
+
 
     @Override
     public String toString() {
