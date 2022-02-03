@@ -63,12 +63,11 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "Flight{" +
+        return "Информация о рейсе: " +
                 "ID = " + id +
                 ", Время вылета ='" + departureTime + '\'' +
                 ", Время прибытия ='" + arrivalTime + '\'' +
                 ", Тип самолета =" + aircraft +
-                ", Статус ='" + status + '\'' +
-                '}';
+                ", Статус ='" + status + '\'' + " ";
     }
 }

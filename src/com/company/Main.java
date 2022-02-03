@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.jetcompany.Aircraft;
 import com.company.jetcompany.Flight;
+import com.company.jetcompany.Ticket;
 import com.company.jetcompany.mangment.JetManagment;
 import com.company.jetcompany.mangment.Managment;
 
@@ -9,6 +10,7 @@ import java.util.Scanner;
 
 public class Main {
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Managment managment = new JetManagment();
@@ -24,19 +26,29 @@ public class Main {
             point = scanner.nextInt();
             switch (point) {
                 case 1:
+                    Flight flight = new Flight();
                     System.out.println("Добавление нового рейса.");
                     System.out.print("Введите id: ");
                     int id = scanner.nextInt();
+                    flight.getId();
+                //    flight.setId(id);
                     System.out.print("Введите время вылета: ");
                     String departureTime = scanner.next();
+                    flight.getDepartureTime();
+                 //   flight.setDepartureTime(departureTime);
                     System.out.print("Введите время прибытия: ");
                     String arrivalTime = scanner.next();
+                    flight.getArrivalTime();
+                 //   flight.setArrivalTime(arrivalTime);
                     System.out.print("Статус рейса: ");
+                    flight.getStatus();
                     String status = scanner.next();
-                    Flight flight = new Flight();
+                   // flight.setStatus(status);
+                    flight.getStatus();
                     managment.addNewFlight(flight);
                     break;
                 case 2:
+                    Ticket ticket = new Ticket();
                     managment.buyTicket();
                     break;
                 case 3:

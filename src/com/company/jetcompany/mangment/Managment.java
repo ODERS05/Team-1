@@ -1,11 +1,12 @@
 package com.company.jetcompany.mangment;
 
 import com.company.jetcompany.Flight;
+import com.company.jetcompany.Ticket;
 
 public interface Managment {
     Flight[] addNewFlight(Flight flight);
 
-    void buyTicket();
+    Ticket[] buyTicket();
 
     Flight[] showAllFlights();
 

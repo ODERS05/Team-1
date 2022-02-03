@@ -9,14 +9,14 @@ public class Aircraft {
     protected String type;
     protected int count = 0;
 
-    public Aircraft(int id, String model, String type){
+    public Aircraft(int id, String model, String type) {
         this.id = id;
         this.model = model;
         this.type = type;
     }
 
     public ArrayList<Flight> getFlights() {
-            return flights;
+        return flights;
     }
 
     public Aircraft() {
