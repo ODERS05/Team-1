@@ -1,6 +1,5 @@
 package com.company;
 
-import com.company.jetcompany.Aircraft;
 import com.company.jetcompany.Flight;
 import com.company.jetcompany.mangment.JetManagment;
 import com.company.jetcompany.mangment.Managment;
@@ -11,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Managment managment = new JetManagment(7);
+        Managment managment = new JetManagment(3, 5);
         int point;
         do {
             System.out.println("1. Добавить новый рейс.");
@@ -25,16 +24,16 @@ public class Main {
                     System.out.println("Добавьте id");
                     int id = scanner.nextInt();
                     System.out.println("Время вылета");
-                    String departureTime = scanner.nextLine();
+                    String departureTime = scanner.next();
                     System.out.println("Время прилета");
-                    String arrivalTime = scanner.nextLine();
+                    String arrivalTime = scanner.next();
                     System.out.println("Статус");
-                    String status = scanner.nextLine();
+                    String status = scanner.next();
                     Flight flight = new Flight(id, departureTime, arrivalTime, status);
                     managment.addNewFlight(flight);
                     break;
                 case 2:
-                    managment.buyTicket();
+                    managment.buyTicket(2);
                     break;
                 case 3:
                     System.out.println("Вывожу все рейсы: ");

@@ -1,6 +1,6 @@
 package com.company.jetcompany;
 
-import com.company.jetcompany.Aircraft;
+import com.company.jetcompany.aircraft.Aircraft;
 
 public class Flight {
     private int id;
@@ -8,6 +8,9 @@ public class Flight {
     private String arrivalTime;
     private Aircraft aircraft;
     private String status;
+    public Flight(){
+
+    }
     public Flight(int id, String departureTime, String arrivalTime, String status){
         this.id = id;
         this.departureTime = departureTime;
