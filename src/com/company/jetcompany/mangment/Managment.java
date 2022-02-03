@@ -3,7 +3,7 @@ package com.company.jetcompany.mangment;
 import com.company.jetcompany.Flight;
 
 public interface Managment {
-    void addNewFlight(Flight flight);
+    Flight[] addNewFlight(Flight flight);
 
     void buyTicket();
 

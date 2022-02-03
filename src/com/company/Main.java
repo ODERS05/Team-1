@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.jetcompany.Aircraft;
 import com.company.jetcompany.Flight;
 import com.company.jetcompany.mangment.JetManagment;
 import com.company.jetcompany.mangment.Managment;
@@ -23,15 +24,27 @@ public class Main {
             point = scanner.nextInt();
             switch (point) {
                 case 1:
-                    Flight flight = new Flight("10:00", "15:25", "Landed");
-                    System.out.println(managment.addNewFlight(flight));
+                    System.out.println("Добавление нового рейса.");
+                    System.out.print("Введите id: ");
+                    int id = scanner.nextInt();
+                    System.out.print("Введите время вылета: ");
+                    String departureTime = scanner.next();
+                    System.out.print("Введите время прибытия: ");
+                    String arrivalTime = scanner.next();
+                    System.out.print("Статус рейса: ");
+                    String status = scanner.next();
+                    Flight flight = new Flight();
+                    managment.addNewFlight(flight);
                     break;
                 case 2:
                     managment.buyTicket();
                     break;
                 case 3:
+                    Flight flight1 = new Flight();
                     System.out.println("Вывожу все рейсы: ");
-                    managment.showAllFlights();
+                    for (Flight showAllFlight : managment.showAllFlights()) {
+                    }
+
                     break;
                 case 4:
                     managment.searchByIdOfFlight("4");

@@ -17,6 +17,10 @@ public class Flight {
         this.status = String.valueOf(status);
     }
 
+    public Flight() {
+
+    }
+
     public int getId() {
         return id;
     }
@@ -60,11 +64,11 @@ public class Flight {
     @Override
     public String toString() {
         return "Flight{" +
-                "id=" + id +
-                ", departureTime='" + departureTime + '\'' +
-                ", arrivalTime='" + arrivalTime + '\'' +
-                ", aircraft=" + aircraft +
-                ", status='" + status + '\'' +
+                "ID = " + id +
+                ", Время вылета ='" + departureTime + '\'' +
+                ", Время прибытия ='" + arrivalTime + '\'' +
+                ", Тип самолета =" + aircraft +
+                ", Статус ='" + status + '\'' +
                 '}';
     }
 }
