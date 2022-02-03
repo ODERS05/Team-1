@@ -41,11 +41,6 @@ public class JetManagment implements Managment {
     }
 
     @Override
-    public Ticket[] buyTicket() {
-        return new Ticket[0];
-    }
-
-    @Override
     public void buyTicket(int num) {
         Ticket ticket = new Ticket();
         Scanner scanner = new Scanner(System.in);
@@ -73,12 +68,12 @@ public class JetManagment implements Managment {
     }
 
     @Override
-    public Flight[] showAllFlights() {
-        Flight[] flights = new Flight[5];
-        for (Flight value : flights) {
-            System.out.println(value);
+    public void showAllFlights() {
+        for (Flight flight : flights) {
+            if (flight != null ) {
+                System.out.println(flight);
+            }
         }
-        return flights;
     }
 
     @Override

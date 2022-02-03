@@ -7,11 +7,10 @@ public interface Managment {
 
     void addNewFlight(String departureTime, String arrivalTime, String aircraft, String status);
 
-    Ticket[] buyTicket();
 
     void buyTicket(int num);
 
-    Flight[] showAllFlights();
+    void showAllFlights();
 
     Flight searchByIdOfFlight(String num);
 
