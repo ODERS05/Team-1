@@ -2,16 +2,19 @@ package com.company.jetcompany;
 
 import com.company.jetcompany.Aircraft;
 
+import java.util.Scanner;
+
 public class Flight {
     private int id;
-    private  String departureTime;
+    private String departureTime;
     private String arrivalTime;
     private Aircraft aircraft;
     private String status;
-    public Flight(String departureTime, String arrivalTime, String status){
-        this.departureTime = departureTime;
-        this.arrivalTime = arrivalTime;
-        this.status = status;
+
+    public Flight(Scanner departureTime, Scanner arrivalTime, Scanner status) {
+        this.departureTime = String.valueOf(departureTime);
+        this.arrivalTime = String.valueOf(arrivalTime);
+        this.status = String.valueOf(status);
     }
 
     public int getId() {

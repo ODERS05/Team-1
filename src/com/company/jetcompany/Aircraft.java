@@ -1,6 +1,7 @@
 package com.company.jetcompany;
 
 public class Aircraft {
+
     protected int id;
     protected String model;
     protected String type;
@@ -31,6 +32,15 @@ public class Aircraft {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Aircraft{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }
 

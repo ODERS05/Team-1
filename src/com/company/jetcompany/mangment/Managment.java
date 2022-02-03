@@ -4,7 +4,10 @@ import com.company.jetcompany.Flight;
 
 public interface Managment {
     void addNewFlight(Flight flight);
+
     void buyTicket();
-    void showAllFlights();
+
+    Flight[] showAllFlights();
+
     Flight searchByIdOfFlight(String num);
 }
