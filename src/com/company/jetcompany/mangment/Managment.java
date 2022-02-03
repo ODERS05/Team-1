@@ -6,5 +6,6 @@ public interface Managment {
     void addNewFlight(Flight flight);
     void buyTicket(int num);
     void showAllFlights();
+    void showAllTickets();
     Flight searchByIdOfFlight(String num);
 }
