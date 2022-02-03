@@ -2,8 +2,6 @@ package com.company.jetcompany.mangment;
 
 import com.company.jetcompany.Flight;
 
-import java.util.Arrays;
-
 public class JetManagment implements Managment {
     private Flight[] flights;
     public JetManagment(int amountFlights){
@@ -29,6 +27,16 @@ public class JetManagment implements Managment {
     }
 
     @Override
+    public void addNewFlight(String departureTime, String arrivalTime, String aircraft, String status) {
+
+    }
+
+    @Override
+    public void buyTicket(int num) {
+
+    }
+
+    @Override
     public void showAllFlights() {
         for (Flight flight : flights) {
             if (flight != null ) {
@@ -41,5 +49,10 @@ public class JetManagment implements Managment {
     public Flight searchByIdOfFlight(String num) {
 
         return null;
+    }
+
+    @Override
+    public void report() {
+        Managment.super.report();
     }
 }

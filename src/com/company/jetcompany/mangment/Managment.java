@@ -5,6 +5,8 @@ import com.company.jetcompany.Ticket;
 
 public interface Managment {
 
+    void buyTicket();
+
     void addNewFlight(String departureTime, String arrivalTime, String aircraft, String status);
 
 

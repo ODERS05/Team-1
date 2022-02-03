@@ -1,14 +1,15 @@
 package com.company.jetcompany;
 
 public class Ticket {
+    private final int cost;
     private int num;
     private String place;
-    private int cost;
+   // private int cost цена 1000;
 
     public Ticket(int num, String place, int cost) {
         this.num = num;
         this.place = place;
-        this.cost = cost;
+        this.cost = 1000;
     }
 
     public Ticket() {
