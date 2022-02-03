@@ -1,7 +1,5 @@
 package com.company;
 
-import com.sun.source.tree.BreakTree;
-
 public class Flight {
 
     private int id;
@@ -11,6 +9,17 @@ public class Flight {
     private String status;
 
     public Flight() {
+    }
+
+    public Flight(int id, String departureTime, String arrivalTime, Aircraft aircraft, String status) {
+        this.id = id;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
+        this.aircraft = aircraft;
+        this.status = status;
+    }
+
+    public Flight(String nextLine, String nextLine1, String nextLine2) {
     }
 
     public int getId() {
@@ -55,20 +64,14 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "Flight{" +
-                "id=" + id +
-                ", departureTime='" + departureTime + '\'' +
-                ", arrivalTime='" + arrivalTime + '\'' +
-                ", aircraft=" + aircraft +
-                ", status='" + status + '\'' +
-                '}';
+        return "Flight{" + "id=" + id + ", departureTime='" + departureTime + '\'' + ", arrivalTime='" + arrivalTime + '\'' + ", aircraft=" + aircraft + ", status='" + status + '\'' + '}';
     }
 
-    public Flight[] getFlights() {
-        Flight[] flights = new Flight[5];
-        for (int i = 0; i < flights.length; i++) {
-            System.out.println(flights[i]);
-        }
-        return flights;
+    public Flight addNewFlight(Flight flight) {
+        return flight;
+    }
+
+    public Flight getFlights(Flight flight) {
+        return flight;
     }
 }

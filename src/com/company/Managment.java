@@ -8,4 +8,6 @@ public interface Managment {
     void showAllFlights();
 
     Flight searchByIdOfFlight(String num);
+
+    Flight[] getFlights();
 }
