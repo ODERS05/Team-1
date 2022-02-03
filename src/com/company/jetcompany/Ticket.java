@@ -13,6 +13,7 @@ public class Ticket {
         this.cost = cost;
     }
 
+
     public int getNum() {
         return num;
     }

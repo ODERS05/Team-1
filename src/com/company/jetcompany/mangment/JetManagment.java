@@ -40,16 +40,23 @@ public class JetManagment implements Managment {
                     for (int j = 0; j < tickets.length; j++)
                         if (flights[j] == null) {
                             tickets[j] = new Ticket(num, ticket.getPlace(), ticket.getCost() );
+                            System.out.println("Вы купили билет");
                         }
+                    break;
                 } else {
-                    check = false;
-                    if (check = true)
-                        System.out.println("Вы купили билет");
-                    if (check = false)
-                        System.out.println("Не осталось мест");
+                    System.out.println("Не осталось мест");
                 }
             }
             break;
+        }
+    }
+
+    @Override
+    public void showAllTickets(int num) {
+        for (Ticket ticket : tickets) {
+            if (ticket != null ) {
+                System.out.println(ticket);
+            }
         }
     }
 

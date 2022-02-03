@@ -17,7 +17,8 @@ public class Main {
             System.out.println("2. Купить билет по номеру рейса.");
             System.out.println("3. Посмотреть все рейсы.");
             System.out.println("4. Поиск рейса по номеру билета");
-            System.out.println("5. Завершить программу.");
+            System.out.println("5. Посмотреть все билеты");
+            System.out.println("6. Завершить программу.");
             point = scanner.nextInt();
             switch (point) {
                 case 1:
@@ -42,7 +43,10 @@ public class Main {
                 case 4:
                     managment.searchByIdOfFlight("4");
                     break;
+                case 5:
+                    managment.showAllTickets(6);
+                    break;
             }
-        } while (point != 5);
+        } while (point != 6);
     }
 }
