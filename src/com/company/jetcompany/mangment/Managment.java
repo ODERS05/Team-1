@@ -9,7 +9,14 @@ public interface Managment {
 
     Ticket[] buyTicket();
 
+    void buyTicket(int num);
+
     Flight[] showAllFlights();
 
     Flight searchByIdOfFlight(String num);
+
+    default void report() {
+    }
+
+    void addNewFlight(Flight flight);
 }

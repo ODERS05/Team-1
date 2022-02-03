@@ -5,6 +5,16 @@ public class Ticket {
     private String place;
     private int cost;
 
+    public Ticket(int num, String place, int cost) {
+        this.num = num;
+        this.place = place;
+        this.cost = cost;
+    }
+
+    public Ticket() {
+
+    }
+
     public int getNum() {
         return num;
     }

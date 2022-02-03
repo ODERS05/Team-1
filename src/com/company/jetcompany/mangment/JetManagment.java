@@ -3,7 +3,7 @@ package com.company.jetcompany.mangment;
 import com.company.jetcompany.Flight;
 import com.company.jetcompany.Ticket;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class JetManagment implements Managment {
     private Flight[] flights;
@@ -34,22 +34,42 @@ public class JetManagment implements Managment {
                 System.out.println(flights[i]);
             }
         }
-        return;
+    }
+
+    public void deleteFlightByTicketNumber() {
+
     }
 
     @Override
     public Ticket[] buyTicket() {
-        Ticket[] tickets = new Ticket[5];
-        if (Arrays.equals(tickets, flights)) {
-            System.out.println("Все билеты на рейс заняты!");
+        return new Ticket[0];
+    }
 
-        } else {
-            ;
+    @Override
+    public void buyTicket(int num) {
+        Ticket ticket = new Ticket();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите свой номер");
+        scanner.nextInt();
+        for (Flight flight : flights) {
+            if (flight.getId() == num) {
+                System.out.println("Есть билет");
+                boolean check = true;
+                if (!check == true) {
+                    for (int j = 0; j < tickets.length; j++)
+                        if (flights[j] == null) {
+                            tickets[j] = new Ticket(num, ticket.getPlace(), ticket.getCost());
+                        }
+                } else {
+                    check = false;
+                    if (check = true)
+                        System.out.println("Вы купили билет");
+                    if (check = false)
+                        System.out.println("Не осталось мест");
+                }
+
+            }
         }
-        for (Ticket value : tickets) {
-            System.out.println(value);
-        }
-        return tickets;
     }
 
     @Override
@@ -64,6 +84,16 @@ public class JetManagment implements Managment {
     @Override
     public Flight searchByIdOfFlight(String num) {
         return null;
+    }
+
+    @Override
+    public void report() {
+
+    }
+
+    @Override
+    public void addNewFlight(Flight flight) {
+
     }
 
     public Flight[] getFlights() {

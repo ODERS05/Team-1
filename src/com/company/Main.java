@@ -1,6 +1,5 @@
 package com.company;
 
-import com.company.jetcompany.Aircraft;
 import com.company.jetcompany.Flight;
 import com.company.jetcompany.Ticket;
 import com.company.jetcompany.mangment.JetManagment;
@@ -10,7 +9,6 @@ import java.util.Scanner;
 
 public class Main {
 
-    @SuppressWarnings("ResultOfMethodCallIgnored")
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Managment managment = new JetManagment();
@@ -25,42 +23,43 @@ public class Main {
             System.out.println("-------------------------------");
             point = scanner.nextInt();
             switch (point) {
-                case 1:
+                case 1 -> {
                     Flight flight = new Flight();
                     System.out.println("Добавление нового рейса.");
                     System.out.print("Введите id: ");
                     int id = scanner.nextInt();
-                    flight.getId();
-                //    flight.setId(id);
+                    //    flight.getId();
+                    //    flight.setId(id);
                     System.out.print("Введите время вылета: ");
                     String departureTime = scanner.next();
-                    flight.getDepartureTime();
-                 //   flight.setDepartureTime(departureTime);
+                    //  flight.getDepartureTime();
+                    //   flight.setDepartureTime(departureTime);
                     System.out.print("Введите время прибытия: ");
                     String arrivalTime = scanner.next();
-                    flight.getArrivalTime();
-                 //   flight.setArrivalTime(arrivalTime);
+                    // flight.getArrivalTime();
+                    //   flight.setArrivalTime(arrivalTime);
                     System.out.print("Статус рейса: ");
-                    flight.getStatus();
+                    //   flight.getStatus();
                     String status = scanner.next();
-                   // flight.setStatus(status);
-                    flight.getStatus();
+                    // flight.setStatus(status);
+                    //   flight.getStatus();
                     managment.addNewFlight(flight);
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     Ticket ticket = new Ticket();
                     managment.buyTicket();
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     Flight flight1 = new Flight();
                     System.out.println("Вывожу все рейсы: ");
-                    for (Flight showAllFlight : managment.showAllFlights()) {
-                    }
-
-                    break;
-                case 4:
+                    managment.showAllFlights();
+                }
+                case 4 -> {
                     managment.searchByIdOfFlight("4");
-                    break;
+                }
+                case 5 -> {
+                    managment.report();
+                }
             }
         } while (point != 5);
         System.out.println("Программа завершается...");
