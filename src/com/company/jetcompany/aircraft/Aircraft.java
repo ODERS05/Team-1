@@ -1,4 +1,4 @@
-package com.company.jetcompany;
+package com.company.jetcompany.aircraft;
 
 public class Aircraft {
     protected int id;
