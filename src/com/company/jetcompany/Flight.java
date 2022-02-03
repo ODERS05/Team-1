@@ -8,7 +8,8 @@ public class Flight {
     private String arrivalTime;
     private Aircraft aircraft;
     private String status;
-    public Flight(String departureTime, String arrivalTime, String status){
+    public Flight(int id, String departureTime, String arrivalTime, String status){
+        this.id = id;
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
         this.status = status;
