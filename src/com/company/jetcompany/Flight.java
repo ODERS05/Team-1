@@ -2,27 +2,17 @@ package com.company.jetcompany;
 
 import com.company.jetcompany.Aircraft;
 
-import java.util.Scanner;
-
 public class Flight {
-
     private int id;
-    private String departureTime;
+    private  String departureTime;
     private String arrivalTime;
     private Aircraft aircraft;
     private String status;
-    private static int count = 0;
-
-    public Flight(Scanner departureTime, Scanner arrivalTime, Scanner status) {
-        count++;
-        this.id = this.id + count;
-        this.departureTime = String.valueOf(departureTime);
-        this.arrivalTime = String.valueOf(arrivalTime);
-        this.status = String.valueOf(status);
-    }
-
-    public Flight() {
-
+    public Flight(int id, String departureTime, String arrivalTime, String status){
+        this.id = id;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
+        this.status = status;
     }
 
     public int getId() {
@@ -65,22 +55,14 @@ public class Flight {
         this.status = status;
     }
 
-    public static int getCount() {
-        return count;
-    }
-
-    public static void setCount(int count) {
-        Flight.count = count;
-    }
-
-
     @Override
     public String toString() {
-        return "Информация о рейсе: " +
-                "ID = " + id +
-                ", Время вылета ='" + departureTime + '\'' +
-                ", Время прибытия ='" + arrivalTime + '\'' +
-                ", Тип самолета =" + aircraft +
-                ", Статус ='" + status + '\'' + " ";
+        return "Flight{" +
+                "id=" + id +
+                ", departureTime='" + departureTime + '\'' +
+                ", arrivalTime='" + arrivalTime + '\'' +
+                ", aircraft=" + aircraft +
+                ", status='" + status + '\'' +
+                '}';
     }
 }
