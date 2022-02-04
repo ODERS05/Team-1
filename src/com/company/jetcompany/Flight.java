@@ -6,15 +6,18 @@ public class Flight {
     private int id;
     private  String departureTime;
     private String arrivalTime;
-    private Aircraft aircraft;
+    private String aircraft;
     private String status;
+    private static int count = 0;
     public Flight(){
-
+        count++;
     }
-    public Flight(int id, String departureTime, String arrivalTime, String status){
-        this.id = id;
+    public Flight(String departureTime, String arrivalTime,String aircraft ,String status){
+        count++;
+        this.id += count;
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
+        this.aircraft = aircraft;
         this.status = status;
     }
 
@@ -42,11 +45,11 @@ public class Flight {
         this.arrivalTime = arrivalTime;
     }
 
-    public Aircraft getAircraft() {
+    public String getAircraft() {
         return aircraft;
     }
 
-    public void setAircraft(Aircraft aircraft) {
+    public void setAircraft(String aircraft) {
         this.aircraft = aircraft;
     }
 
@@ -56,6 +59,14 @@ public class Flight {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        Flight.count = count;
     }
 
     @Override

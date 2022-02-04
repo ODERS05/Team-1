@@ -29,21 +29,26 @@ public class JetManagment implements Managment {
     @Override
     public void buyTicket(int num) {
         Ticket ticket = new Ticket();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите свой номер");
-        scanner.nextInt();
         for (int i = 0; i < flights.length; i++) {
             if (flights[i].getId() == num) {
                 System.out.println("Есть билет");
                 boolean check = true;
-                if (!check == true) {
-                    for (int j = 0; j < tickets.length; j++)
-                        if (flights[j] == null) {
-                            tickets[j] = new Ticket(num, ticket.getPlace(), ticket.getCost() );
+                if (check == true) {
+                    for (int j = 0; j < tickets.length; j++){
+                        if (tickets[j] == null){
+                            tickets[j] = ticket;
+                            check = false;
+                            String place = "A" + j;
+                            tickets[j] = new Ticket(flights[j], place, 1000);
+                            System.out.println("Вы купили билет");
+                            break;
                         }
-                } else {
-                    System.out.println("Нет мест");
+                    }
+                    if (check){
+                        System.out.println("Все билеты распроданы");
+                    }
                 }
+                break;
             }
             break;
         }
@@ -68,8 +73,28 @@ public class JetManagment implements Managment {
     }
 
     @Override
-    public Flight searchByIdOfFlight(String num) {
-        return null;
+    public void searchByIdOfFlight(int num) {
+        Ticket[] tickets = new Ticket[5];
+        Flight[] flights = new Flight[5];
+        for (int i = 0; i < tickets.length; i++) {
+            if(tickets[i].getNum() == num) {
+                System.out.println("Вот ваш рейс " + flights[i]);
+                boolean check = true;
+                if(!check) {
+                    for (int j =0; j < tickets.length; j++)
+                        if (flights[j] == null) {
+                            tickets[j] = new Ticket();
+                            System.out.println("Ошибка, проверьте номер билета или рейса!");
+                        }
+                }
+                break;
+            }
+        }
+    }
+
+    @Override
+    public String report() {
+        return "Количество рейсов " + Flight.getCount() + "\nКоличество проданных билетов " + Ticket.getCount();
     }
 
     public Flight[] getFlights() {

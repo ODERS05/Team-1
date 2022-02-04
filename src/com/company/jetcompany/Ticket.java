@@ -1,16 +1,35 @@
 package com.company.jetcompany;
 
 public class Ticket {
-    private int num;
+    private static int num = 0;
     private String place;
     private int cost;
+    private static int count = 0;
+    private Flight flight;
     public Ticket(){
-
     }
-    public Ticket(int num, String place, int cost) {
-        this.num = num;
+    public Ticket(Flight flight, String place, int cost) {
+        count++;
+        num += count;
+        this.flight = flight;
         this.place = place;
         this.cost = cost;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        Ticket.count = count;
+    }
+
+    public Flight getFlight() {
+        return flight;
+    }
+
+    public void setFlight(Flight flight) {
+        this.flight = flight;
     }
 
     public int getNum() {
@@ -42,7 +61,7 @@ public class Ticket {
         return "Ticket{" +
                 "num=" + num +
                 ", place='" + place + '\'' +
-                ", cost=" + cost +
+                ", cost=" + cost + 1 +
                 '}';
     }
 }
