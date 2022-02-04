@@ -1,7 +1,8 @@
 package com.company.jetcompany;
 
 public class Ticket {
-    private final int cost;
+    private int id;
+    private int cost;
     private int num;
     private String place;
    // private int cost цена 1000;
@@ -14,6 +15,10 @@ public class Ticket {
 
     public Ticket() {
 
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getNum() {
@@ -37,7 +42,7 @@ public class Ticket {
     }
 
     public void setCost(int cost) {
-        this.cost = cost;
+        this.cost = 1000;
     }
 
     @Override
@@ -46,5 +51,8 @@ public class Ticket {
                 "Номер билета: " + num +
                 ", Место направления: '" + place + '\'' +
                 ", Цена: " + cost + "";
+    }
+
+    public boolean getNumber() {
     }
 }

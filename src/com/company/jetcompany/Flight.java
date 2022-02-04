@@ -3,6 +3,7 @@ package com.company.jetcompany;
 import com.company.jetcompany.Aircraft;
 
 public class Flight {
+    public boolean getId;
     private int id;
     private  String departureTime;
     private String arrivalTime;
@@ -57,12 +58,10 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "Flight{" +
-                "id=" + id +
-                ", departureTime='" + departureTime + '\'' +
-                ", arrivalTime='" + arrivalTime + '\'' +
-                ", aircraft=" + aircraft +
-                ", status='" + status + '\'' +
-                '}';
+        return "ID: " + id +
+                ", время вылета: " + departureTime +
+                ", время прибытия: " + arrivalTime +
+                ", тип самолета: " + aircraft +
+                ", статус рейса: " + status + '\'' + " ";
     }
 }

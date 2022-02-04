@@ -14,24 +14,29 @@ public class Main {
         Managment managment = new JetManagment(7);
         int point;
         do {
+            System.out.println("--------------------------------");
             System.out.println("1. Добавить новый рейс.");
             System.out.println("2. Купить билет по номеру рейса.");
             System.out.println("3. Посмотреть все рейсы.");
             System.out.println("4. Поиск рейса по номеру билета");
             System.out.println("5. Завершить программу.");
+            System.out.println("--------------------------------");
             point = scanner.nextInt();
             switch (point) {
                 case 1:
-                    System.out.println("Добавьте id");
+                    System.out.print("Введите ID: ");
                     int id = scanner.nextInt();
-                    System.out.println("Время вылета");
-                    String departureTime = scanner.nextLine();
-                    System.out.println("Время прилета");
-                    String arrivalTime = scanner.nextLine();
-                    System.out.println("Статус");
-                    String status = scanner.nextLine();
+                    System.out.print("Введите время вылета: ");
+                    String departureTime = scanner.next();
+                    System.out.print("Введите время прибытия: ");
+                    String arrivalTime = scanner.next();
+                    System.out.print("Введите тип самолета: ");
+                    String aircraft = scanner.next();
+                    System.out.print("Статус рейса: ");
+                    String status = scanner.next();
                     Flight flight = new Flight(id, departureTime, arrivalTime, status);
                     managment.addNewFlight(flight);
+                    System.out.println("Рейс успешно добавлен!");
                     break;
                 case 2:
                     managment.buyTicket();
