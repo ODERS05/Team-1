@@ -8,7 +8,8 @@ import java.util.Scanner;
 public class JetManagment implements Managment {
     private Flight[] flights;
     private Ticket[] tickets;
-    public JetManagment(int amountFlights, int amountTickets){
+
+    public JetManagment(int amountFlights, int amountTickets) {
         flights = new Flight[amountFlights];
         tickets = new Ticket[amountTickets];
     }
@@ -16,9 +17,9 @@ public class JetManagment implements Managment {
     @Override
     public void addNewFlight(Flight flight) {
         for (int i = 0; i < flights.length; i++) {
-            if (flights[i] == null){
+            if (flights[i] == null) {
                 flights[i] = flight;
-                if (flight == null){
+                if (flight == null) {
                     System.out.println("No flights");
                     break;
                 }
@@ -26,6 +27,7 @@ public class JetManagment implements Managment {
             }
         }
     }
+
     @Override
     public void buyTicket(int num) {
         Ticket ticket = new Ticket();
@@ -34,8 +36,8 @@ public class JetManagment implements Managment {
                 System.out.println("Есть билет");
                 boolean check = true;
                 if (check == true) {
-                    for (int j = 0; j < tickets.length; j++){
-                        if (tickets[j] == null){
+                    for (int j = 0; j < tickets.length; j++) {
+                        if (tickets[j] == null) {
                             tickets[j] = ticket;
                             check = false;
                             String place = "A" + j;
@@ -44,12 +46,13 @@ public class JetManagment implements Managment {
                             break;
                         }
                     }
-                    if (check){
+                    if (check) {
                         System.out.println("Все билеты распроданы");
                     }
                 }
                 break;
             }
+            System.out.println("Error");
             break;
         }
     }
@@ -57,37 +60,36 @@ public class JetManagment implements Managment {
     @Override
     public void showAllTickets() {
         for (Ticket ticket : tickets) {
-            if (ticket != null ) {
+            if (ticket != null) {
                 System.out.println(ticket);
             }
         }
     }
 
     @Override
-    public void showAllFlights() {
-        for (Flight flight : flights) {
-            if (flight != null ) {
-                System.out.println(flight);
+    public void searchByIdOfFlight(int num) {
+        try {
+            boolean check = true;
+            for (Ticket ticket : tickets) {
+                if (ticket.getNum() == num) {
+                    System.out.println("Ваш рейс: " + ticket.getFlight());
+                    check = false;
+                    break;
+                }
             }
+            if (check) {
+                System.out.println("Такого билета нету!");
+            }
+        } catch (NullPointerException ex) {
+            System.out.println("Рейс не найден!");
         }
     }
 
     @Override
-    public void searchByIdOfFlight(int num) {
-        Ticket[] tickets = new Ticket[5];
-        Flight[] flights = new Flight[5];
-        for (int i = 0; i < tickets.length; i++) {
-            if(tickets[i].getNum() == num) {
-                System.out.println("Вот ваш рейс " + flights[i]);
-                boolean check = true;
-                if(!check) {
-                    for (int j =0; j < tickets.length; j++)
-                        if (flights[j] == null) {
-                            tickets[j] = new Ticket();
-                            System.out.println("Ошибка, проверьте номер билета или рейса!");
-                        }
-                }
-                break;
+    public void showAllFlights() {
+        for (Flight flight : flights) {
+            if (flight != null) {
+                System.out.println(flight);
             }
         }
     }

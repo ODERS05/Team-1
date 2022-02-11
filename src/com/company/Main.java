@@ -4,7 +4,6 @@ import com.company.jetcompany.Flight;
 import com.company.jetcompany.mangment.JetManagment;
 import com.company.jetcompany.mangment.Managment;
 
-import java.awt.*;
 import java.io.*;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -14,7 +13,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         Managment managment = new JetManagment(3, 5);
-        int point = 0;
+        int point;
         do {
             System.out.println("1. Добавить новый рейс.");
             System.out.println("2. Купить билет по номеру рейса.");
@@ -48,13 +47,9 @@ public class Main {
                     managment.showAllFlights();
                     break;
                 case 4:
-                    try {
-                        System.out.print("Введите номер билета: ");
-                        int num1 = scanner.nextInt();
-                        managment.searchByIdOfFlight(num1);
-                    }catch (NullPointerException ex){
-                        System.out.println("Error");
-                    }
+                    System.out.print("Введите номер билета: ");
+                    int num1 = scanner.nextInt();
+                    managment.searchByIdOfFlight(num1);
                     break;
                 case 5:
                     managment.showAllTickets();

@@ -1,7 +1,7 @@
 package com.company.jetcompany;
 
 public class Ticket {
-    private static int num = 0;
+    private static int num;
     private String place;
     private int cost;
     private static int count = 0;
